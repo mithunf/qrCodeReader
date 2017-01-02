@@ -6,19 +6,17 @@ $(document).ready(function() {
 
   qr.callback = function(result,err) {
     if( result ) {
-      console.log("result : " + result);	
       $('#imageContainer').append(result);
     }
     if( err ) {
-      console.log("error : " + err);
       $('#imageContainer').append(err);
     }
   }
 
   var canvas =  document.getElementById("qr-canvas");
   var ctx = canvas.getContext("2d");
-
   var input = document.querySelector('input[type=file]');
+  
   input.addEventListener('change', function () {
     var file = input.files[0];
     check(file);
